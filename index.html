@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" defer></script>
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper wrapper-header">
+        <h1 class="title">Tic-Tac-Toe</h1>
+      </div>
+    </header>
+    <main class="main">
+      <div class="wrapper wrapper-main">
+        <div class="menus">
+          <div class="menu">
+            <div class="menu-btn">
+              <input type="radio" name="mode" id="player-player" checked />
+              <label for="player-player">VS Player</label>
+            </div>
+            <div class="menu-btn">
+              <input type="radio" name="mode" id="player-computer" />
+              <label for="player-computer">VS Comp</label>
+            </div>
+            <button class="btn btn-submit">Start</button>
+          </div>
+        </div>
+        <div class="game">
+          <div class="board">
+            <div class="board__cell" id="0"></div>
+            <div class="board__cell" id="1"></div>
+            <div class="board__cell" id="2"></div>
+            <div class="board__cell" id="3"></div>
+            <div class="board__cell" id="4"></div>
+            <div class="board__cell" id="5"></div>
+            <div class="board__cell" id="6"></div>
+            <div class="board__cell" id="7"></div>
+            <div class="board__cell" id="8"></div>
+          </div>
+          <div id="results">
+            <h3 class="results-display">PRESS <span>START</span> TO PLAY!</h3>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --cell-size: 130px;
+  --cell-size-2: 90px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+  margin: auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  background-color: purple;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: aliceblue;
+}
+
+.wrapper-main {
+  padding: 30px 0;
+  gap: 30px;
+  width: fit-content;
+}
+
+.menus {
+  width: 390px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.menu-btn {
+  display: flex;
+}
+
+label {
+  border: 2px solid black;
+  padding: 3px 10px;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  flex: 1;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: purple;
+  color: white;
+}
+
+.btn-submit {
+  outline: none;
+  background: none;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 3px 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  grid-column: 1/ 3;
+  font-weight: 700;
+}
+
+.btn-submit:hover {
+  background-color: purple;
+  color: white;
+}
+
+.game {
+  position: relative;
+}
+
+#results {
+  text-align: center;
+  border-radius: 7px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-display {
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.results-display span {
+  color: darkorchid;
+  font-weight: 900;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.board__cell {
+  border: 2px solid black;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--cell-size) * 0.9);
+  font-weight: 300;
+}
+
+.board-occupied {
+  cursor: not-allowed;
+}
+
+.board__cell:first-child,
+.board__cell:nth-child(2),
+.board__cell:nth-child(3) {
+  border-top: none;
+}
+
+.board__cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.board__cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.board__cell:last-child,
+.board__cell:nth-child(8),
+.board__cell:nth-child(7) {
+  border-bottom: none;
+}
+
+@media (max-width: 410px) {
+  .menus {
+    width: 300px;
+  }
+
+  .board__cell {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 320px) {
+  .menus {
+    width: 250px;
+  }
+
+  .board__cell {
+    width: 83.33px;
+    height: 83.33px;
+  }
+}
+
+@media (max-width: 272px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .menus {
+    width: 210px;
+  }
+
+  .board__cell {
+    width: 70px;
+    height: 70px;
+  }
+}
