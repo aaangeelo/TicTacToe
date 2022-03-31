@@ -47,10 +47,10 @@ const ticTacToe = (playerOne, playerTwo) => {
 
     if (winner === "DRAW") {
       results.display = "flex";
-      resultsDisplay.textContent = "DRAW";
+      resultsDisplay.innerHTML = "GAME <span>DRAW</span>";
     } else if (winner) {
       results.display = "flex";
-      resultsDisplay.textContent = `${winner.letter} PLAYER WON`;
+      resultsDisplay.innerHTML = `<span>${winner.letter}</span> PLAYER WON`;
       return;
     }
 
